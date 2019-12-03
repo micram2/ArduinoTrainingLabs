@@ -43,11 +43,10 @@ void loop() {
   // Print out the state of the button
   Serial.println(buttonState);
   // If buttonState is true/pushed by human the LED will blink
-  if (buttonState==HIGH)
+  if (buttonState==HIGH){
    digitalWrite(led, HIGH);
-   delay(1500);
+}  else {
    digitalWrite(led, LOW);
-   delay(500);
-
+  }
   delay(1); // delay in between readings for stability
 }
