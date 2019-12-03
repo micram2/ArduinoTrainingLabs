@@ -38,16 +38,16 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  digitalWrite(led, HIGH);
-  delay(1500);
-  digitalWrite(led, LOW);
-  delay(500);
-
-
   // read the input pin
   int buttonState = digitalRead(pushButton);
-  // print out the state of the button 
+  // Print out the state of the button
   Serial.println(buttonState);
-  delay(250); // delay in between readings for stability
+  // If buttonState is true/pushed by human the LED will blink
+  if (buttonState==HIGH)
+   digitalWrite(led, HIGH);
+   delay(1500);
+   digitalWrite(led, LOW);
+   delay(500);
+
+  delay(1); // delay in between readings for stability
 }
